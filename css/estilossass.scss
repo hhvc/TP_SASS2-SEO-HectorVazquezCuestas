@@ -1,8 +1,16 @@
 @import "sass-partials/colores";
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@keyframes efecto{
+    0%{
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.85);
+    }
+    100%{
+        box-shadow: 0 0 0 15px $colorfuentenight;
+    }
+}
 @mixin mbox {
     width: auto;
-    height: 30px;
+    height: 80px;
 }
 // maps utilizado en hoja "4-contacto.html"
 $box-color: ("a": $colorbase, "b": $colorsombra);
@@ -105,13 +113,34 @@ $box-color: ("a": $colorbase, "b": $colorsombra);
     }
 }
 // fin estilos .dark-mode
-
+// INICIO ESTILOS BOTÓN WHATSAPP
+.btn-wsp{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    line-height: 55px;
+    bottom: 130px;
+    right: 230px;
+    background: #0df053;
+    color: #fff;
+    border-radius: 50px;
+    text-align:center;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    animation: efecto 1.2s infinite;
+    &:hover{
+        text-decoration: none;
+        color: #0df053 !important;
+        background: white;
+    }
+}
+// Fin estilos botón whatsapp
 //Estilos con @mixin y @extend y map en pág. "4-contacto.html"
 .grid-container{
     grid-area: container;
     display: grid;
     grid-template-areas: 
-    "box box box box box";
+    "box box box box box box";
     .box1{
         @include mbox;
         background: map-get($box-color, "a");

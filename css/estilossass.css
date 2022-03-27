@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@-webkit-keyframes efecto {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.85);
+  }
+  100% {
+    box-shadow: 0 0 0 15px #ededed;
+  }
+}
+@keyframes efecto {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.85);
+  }
+  100% {
+    box-shadow: 0 0 0 15px #ededed;
+  }
+}
 .navbar {
   background-color: rgba(18, 201, 134, 0.384) !important;
 }
@@ -99,18 +115,40 @@
   color: #ededed;
 }
 
+.btn-wsp {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  line-height: 55px;
+  bottom: 130px;
+  right: 230px;
+  background: #0df053;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  -webkit-animation: efecto 1.2s infinite;
+          animation: efecto 1.2s infinite;
+}
+.btn-wsp:hover {
+  text-decoration: none;
+  color: #0df053 !important;
+  background: white;
+}
+
 .grid-container {
   grid-area: container;
   display: grid;
-  grid-template-areas: "box box box box box";
+  grid-template-areas: "box box box box box box";
 }
 .grid-container .box1, .grid-container .box5, .grid-container .box3 {
   width: auto;
-  height: 30px;
+  height: 80px;
   background: rgba(18, 201, 134, 0.384);
 }
 .grid-container .box2, .grid-container .box4 {
   width: auto;
-  height: 30px;
+  height: 80px;
   background: rgba(19, 94, 66, 0.384);
 }/*# sourceMappingURL=estilossass.css.map */
